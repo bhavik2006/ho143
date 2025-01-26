@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #ff6f61;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .question {
+            margin: 20px auto;
+            font-size: 1.2em;
+            max-width: 500px;
+        }
+        .question input {
+            width: 80%;
+            padding: 10px;
+            font-size: 1em;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .message {
+            display: none;
+            margin-top: 30px;
+            font-size: 1.5em;
+            color: #444;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 1em;
+            color: white;
+            background: #ff6f61;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #e55a4f;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            p, .question input {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Hi, My World! 🌸</h1>
+    <p>I have something special for you. Answer these simple questions first!</p>
+    
+    <div class="question">
+        <label>1. What is your favorite memory with me? </label>
+        <input type="text" id="q1">
+    </div>
+    <div class="question">
+        <label>2. What is one thing you love about yourself? </label>
+        <input type="text" id="q2">
+    </div>
+    <div class="question">
+        <label>3. What makes you feel most loved? </label>
+        <input type="text" id="q3">
+    </div>
+    <div class="question">
+        <label>4. If you could go anywhere with me, where would it be? </label>
+        <input type="text" id="q4">
+    </div>
+    <div class="question">
+        <label>5. What is your dream for the future? </label>
+        <input type="text" id="q5">
+    </div>
+    <div class="question">
+        <label>6. One word to describe how I make you feel? </label>
+        <input type="text" id="q6">
+    </div>
+    
+    <button onclick="showMessage()">Submit</button>
+
+    <div id="message" class="message">
+        <h2>My Heartfelt Words for You ❤️</h2>
+        <p>I am so sorry for all the mistakes I've made. I never meant to hurt you.</p>
+        <p>Thank you for always trying to understand me. Your patience and love mean the world to me.</p>
+        <p>You are my inspiration, my strength, and my happiness. I will always cherish you.</p>
+        <h1 style="color: #ff6f61;">I LOVE YOU FOREVER ❤️</h1>
+        <p>~ Your, love</p>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="your-song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function showMessage() {
+            const answers = [];
+            for (let i = 1; i <= 6; i++) {
+                const answer = document.getElementById(`q${i}`).value.trim();
+                if (answer === "") {
+                    alert("Please answer all the questions before submitting!");
+                    return;
+                }
+                answers.push(answer);
+            }
+            // Show the message
+            document.getElementById("message").style.display = "block";
+
+            // Play the background music
+            const bgMusic = document.getElementById("bgMusic");
+            bgMusic.play();
+        }
+    </script>
+</body>
+</html>
+
